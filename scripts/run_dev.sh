@@ -236,7 +236,10 @@ DOCKER_ARGS+=("-e ISAAC_ROS_WS=/workspaces/isaac_ros-dev")
 
 # if project_gazebo not present, clone it
 if [ -d /home/$USER/project_gazebo ]; then
-    print_info "Project Gazebo already cloned"
+    print_info "Project Gazebo already cloned, pulling..."
+    cd /home/$USER/project_gazebo
+    git pull
+    cd -
 else
     print_info "Cloning Project Gazebo"
     git clone https://github.com/aerostack2/project_gazebo.git /home/$USER/project_gazebo
