@@ -1,0 +1,7 @@
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
+
+# Install dependencies
+RUN python3 -m pip install -U numpy==1.26
+RUN python3 -m pip install -U lightning
+RUN python3 -m pip install -U scikit-image

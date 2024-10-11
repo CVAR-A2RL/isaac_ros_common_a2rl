@@ -234,6 +234,14 @@ DOCKER_ARGS+=("-e ROS_DOMAIN_ID")
 DOCKER_ARGS+=("-e USER")
 DOCKER_ARGS+=("-e ISAAC_ROS_WS=/workspaces/isaac_ros-dev")
 
+# if project_gazebo not present, clone it
+if [ -d /home/$USER/project_gazebo ]; then
+    print_info "Project Gazebo already cloned"
+else
+    print_info "Cloning Project Gazebo"
+    git clone https://github.com/aerostack2/project_gazebo.git /home/$USER/project_gazebo
+fi
+
 if [[ $PLATFORM == "aarch64" ]]; then
     DOCKER_ARGS+=("-v /usr/bin/tegrastats:/usr/bin/tegrastats")
     DOCKER_ARGS+=("-v /tmp/:/tmp/")
