@@ -234,6 +234,20 @@ DOCKER_ARGS+=("-e ROS_DOMAIN_ID")
 DOCKER_ARGS+=("-e USER")
 DOCKER_ARGS+=("-e ISAAC_ROS_WS=/workspaces/isaac_ros-dev")
 
+# if aerostack2 not present, clone it
+# if [ -d /home/$USER/aerostack2_ws/src/aerostack2 ]; then
+#     print_info "Aerostack2 already cloned, pulling..."
+#     cd /home/$USER/aerostack2_ws/src/aerostack2
+#     git pull
+#     cd -
+# else
+#     print_info "Cloning Aerostack2"
+#     git clone -b 669-as2_gazebo_assets-add-gates-model git@github.com:aerostack2/aerostack2.git /home/$USER/aerostack2_ws/src/aerostack2
+# fi
+# git clone -b 669-as2_gazebo_assets-add-gates-model git@github.com:aerostack2/aerostack2.git
+
+# DOCKER_ARGS+=("-v /home/$USER/aerostack2_ws:/root/aerostack2_ws")
+
 # if project_gazebo not present, clone it
 if [ -d /home/$USER/project_gazebo ]; then
     print_info "Project Gazebo already cloned, pulling..."
