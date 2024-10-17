@@ -17,7 +17,8 @@ RUN apt-get update && apt-get install -y ros-dev-tools
 WORKDIR /root/aerostack2_ws/src
 
 #clone the aerostack2 repository from github
-RUN git clone https://github.com/aerostack2/aerostack2.git
+#RUN git clone https://github.com/aerostack2/aerostack2.git
+COPY ../aerostack2 aerostack2
 
 WORKDIR /root/aerostack2_ws
 RUN source /opt/ros/humble/setup.bash && rosdep install -y -r -q --from-paths src --ignore-src
