@@ -23,9 +23,8 @@ services:
       # working dirs
       # - ~/aerostack2_ws:/root/aerostack2_ws
       - ~/TFM_david/gate_detector:/root/gate_detector
-      - ~/project_A2RL_gates_indoor:/root/project_A2RL_gates_indoor
       - ~/Documents/rosbag_a2rl:/root/rosbag_a2rl
-      - ~/project_gazebo:/root/project_gazebo
+      - ~/project_a2rl:/root/project_a2rl
     network_mode: "host"
     command: tail -f /dev/null
     working_dir: /root
