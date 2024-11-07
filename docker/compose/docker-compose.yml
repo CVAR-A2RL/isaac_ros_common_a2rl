@@ -25,6 +25,11 @@ services:
       - ~/TFM_david/gate_detector:/root/gate_detector
       - ~/Documents/rosbag_a2rl:/root/rosbag_a2rl
       - ~/project_a2rl:/root/project_a2rl
+      - ~/drone-racing-dataset:/root/drone-racing-dataset
+      - ~/drone-racing-msgs:/root/aerostack2_ws/src/drone-racing-msgs
+      - ~/gate_perception:/root/aerostack2_ws/src/gate_perception
+      # oh-my-bash
+      - ~/.oh-my-bash:/root/.oh-my-bash
     network_mode: "host"
     command: tail -f /dev/null
     working_dir: /root

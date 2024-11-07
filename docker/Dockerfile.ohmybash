@@ -1,0 +1,6 @@
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
+
+# Install Oh My Bash
+COPY ../oh-my-bash-bashrc /root/oh-my-bash-bashrc
+RUN cat /root/oh-my-bash-bashrc >> /root/.bashrc
