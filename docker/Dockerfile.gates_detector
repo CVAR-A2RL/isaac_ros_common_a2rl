@@ -8,3 +8,6 @@ RUN python3 -m pip install -U scikit-image
 
 RUN python3 -m pip install -U rosbags
 RUN python3 -m pip install -U rosbags-image
+
+RUN python3 -m pip install -U tensorboard
+RUN python3 -m pip install -U labelbox
