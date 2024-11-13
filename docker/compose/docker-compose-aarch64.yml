@@ -23,7 +23,7 @@ services:
       # working dirs
       # - ~/ultralytics:/root/ultralytics
       # - ~/minerva_training:/root/arquimea
-      - ~/TFM_david/gate_detector:/root/gate_detector
+      - ~/gate_perception:/root/aerostack2_ws/src/gate_perception
       - ~/vision_utilities:/root/vision_utilities
       # aarch64 related
       - /usr/bin/tegrastats:/usr/bin/tegrastats
