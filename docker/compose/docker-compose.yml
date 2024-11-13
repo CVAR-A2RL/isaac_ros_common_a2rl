@@ -28,6 +28,7 @@ services:
       - ~/drone-racing-dataset:/root/drone-racing-dataset
       - ~/drone-racing-msgs:/root/aerostack2_ws/src/drone-racing-msgs
       - ~/gate_perception:/root/aerostack2_ws/src/gate_perception
+      - ~/vision_utilities:/root/vision_utilities
       # oh-my-bash
       - ~/.oh-my-bash:/root/.oh-my-bash
     network_mode: "host"

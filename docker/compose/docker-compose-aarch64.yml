@@ -1,14 +1,17 @@
 services:
   ros2:
     image: isaac_ros_dev-aarch64
-    container_name: arquimea_container
+    container_name: a2rl_container
     environment:
       DISPLAY: $DISPLAY
       XAUTHORITY: $XAUTHORITY
       SSH_AUTH_SOCK: $SSH_AUTH_SOCK
+      NVIDIA_VISIBLE_DEVICES: all
+      NVIDIA_DRIVER_CAPABILITIES: all
     runtime: nvidia
     privileged: true
     restart: always
+    shm_size: '2gb'
     volumes:
       # display related 
       - /tmp/.X11-unix:/tmp/.X11-unix
@@ -20,6 +23,8 @@ services:
       # working dirs
       # - ~/ultralytics:/root/ultralytics
       # - ~/minerva_training:/root/arquimea
+      - ~/TFM_david/gate_detector:/root/gate_detector
+      - ~/vision_utilities:/root/vision_utilities
       # aarch64 related
       - /usr/bin/tegrastats:/usr/bin/tegrastats
       - /tmp/:/tmp/
